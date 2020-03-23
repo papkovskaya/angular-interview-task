@@ -4,15 +4,21 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './components/button/button.component';
-import { InputComponent } from './components/input/input.component';
+import { InputMessageComponent } from './components/input-message/input-message.component';
 import { ListOfButtonsComponent } from './components/list-of-buttons/list-of-buttons.component';
+import { OutputMessageComponent } from './components/output-message/output-message.component';
+import { OutputButtonComponent } from './components/output-button/output-button.component';
+import { OutputContainerComponent } from './components/output-container/output-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
-    InputComponent,
-    ListOfButtonsComponent
+    InputMessageComponent,
+    ListOfButtonsComponent,
+    OutputMessageComponent,
+    OutputButtonComponent,
+    OutputContainerComponent
   ],
   imports: [
     BrowserModule,
