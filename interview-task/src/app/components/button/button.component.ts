@@ -9,7 +9,13 @@ export class ButtonComponent implements OnInit {
 
   constructor() { }
 
+  public counter = 0;
+
   ngOnInit(): void {
+  }
+
+  increaseCounter() {
+    this.counter += 1;
   }
 
 }
