@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './components/button/button.component';
@@ -14,7 +15,8 @@ import { ListOfButtonsComponent } from './components/list-of-buttons/list-of-but
     ListOfButtonsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

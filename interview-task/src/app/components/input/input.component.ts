@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class InputComponent implements OnInit {
 
   constructor() { }
+
+  public message: string = "";
 
   ngOnInit(): void {
   }
