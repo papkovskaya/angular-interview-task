@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from '../../message.service';
 
 @Component({
   selector: 'app-input-message',
@@ -6,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input-message.component.scss']
 })
 export class InputMessageComponent implements OnInit {
+  
+  message: string;
 
-  constructor() { }
-
-  public message: string = "";
+  constructor(private data: MessageService) { }
 
   ngOnInit(): void {
+  }
+
+  newMessage(newMessage: string) {
+    this.data.changeMessage(newMessage);
   }
 
 }
