@@ -2,6 +2,10 @@
   <div class="action-container">
     <app-input-message></app-input-message>
     <app-list-of-buttons></app-list-of-buttons>
-    <app-output-message></app-output-message>
+    <div class=wrapper> 
+      <div class="horizontal-container ">
+        <app-output-container *ngFor="let i of [1, 2, 3]"></app-output-container>
+      </div>
+    </div>
   </div>
 </div>

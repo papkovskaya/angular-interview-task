@@ -2,8 +2,17 @@
   text-align: center;
 }
 
-
 .action-container {
   display: flex;
   flex-direction: column;
+}
+
+.horizontal-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+app-output-container {
+  margin: 10px;
 }
