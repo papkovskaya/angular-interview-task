@@ -1,0 +1,3 @@
+export const initialMessageState = {
+  message: "",
+}
