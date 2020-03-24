@@ -9,6 +9,7 @@ import { ListOfButtonsComponent } from './components/list-of-buttons/list-of-but
 import { OutputMessageComponent } from './components/output-message/output-message.component';
 import { OutputButtonComponent } from './components/output-button/output-button.component';
 import { OutputContainerComponent } from './components/output-container/output-container.component';
+import { CaseInverterPipe } from './pipes/case-inverter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { OutputContainerComponent } from './components/output-container/output-c
     ListOfButtonsComponent,
     OutputMessageComponent,
     OutputButtonComponent,
-    OutputContainerComponent
+    OutputContainerComponent,
+    CaseInverterPipe
   ],
   imports: [
     BrowserModule,
