@@ -1,3 +1,1 @@
-export const initialMessageState = {
-  message: "",
-}
+export const initialMessageState = {}
