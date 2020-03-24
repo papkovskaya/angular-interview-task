@@ -6,10 +6,8 @@ export const buttonsInformationReducers = (
   state = initialButtonsInformationState,
   action: ButtonsInformationActions
 ) => {
-  debugger;
   switch (action.type) {
     case EButtonsInformationActions.UpdateAmountOfClicks: {
-      debugger;
       return {
         ...state,
         buttonsClicks: state.buttonsClicks + action.payload

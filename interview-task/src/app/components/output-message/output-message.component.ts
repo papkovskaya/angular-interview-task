@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from '../../message.service';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { selectMessage } from 'src/app/store/selectors/message.selector';
+import { EMessageActions } from 'src/app/store/actions/message.actions';
 
 @Component({
   selector: 'app-output-message',
@@ -8,12 +11,12 @@ import { MessageService } from '../../message.service';
 })
 export class OutputMessageComponent implements OnInit {
 
-  message: string;
+  message$: Observable<string> = this._store.select(selectMessage);
 
-  constructor(private data: MessageService) { }
+  constructor(private _store: Store) { }
 
   ngOnInit(): void {
-    this.data.currentMessage.subscribe(message => this.message = message);
+    this._store.dispatch({type: EMessageActions.LoadMessage});
   }
 
 }

@@ -5,7 +5,6 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
 import { appReducers } from './store/reducers/app.reducers';
-import { ButtonsInformationEffects } from './store/effects/buttons-information.effects';
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './components/button/button.component';
 import { InputMessageComponent } from './components/input-message/input-message.component';
@@ -14,8 +13,7 @@ import { OutputMessageComponent } from './components/output-message/output-messa
 import { OutputButtonComponent } from './components/output-button/output-button.component';
 import { OutputContainerComponent } from './components/output-container/output-container.component';
 import { CaseInverterPipe } from './pipes/case-inverter.pipe';
-import { buttonsInformationReducers } from './store/reducers/buttons-information.reducers';
-import { messageReducer } from './store/reducers/message.reducer';
+import { MessageEffects } from './store/effects/message.effects';
 
 @NgModule({
   declarations: [
@@ -31,8 +29,8 @@ import { messageReducer } from './store/reducers/message.reducer';
   imports: [
     BrowserModule,
     FormsModule,
-    StoreModule.forRoot({buttonsInformation: buttonsInformationReducers, message: messageReducer}),
-    EffectsModule.forRoot([ButtonsInformationEffects]),
+    StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot([MessageEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]

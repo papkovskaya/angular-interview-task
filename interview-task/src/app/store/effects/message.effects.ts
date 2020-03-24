@@ -1,26 +1,27 @@
-// import { Injectable } from '@angular/core';
-// import { Effect, ofType, Actions} from '@ngrx/effects';
-// import { Store, select } from '@ngrx/store';
-// import { of } from 'rxjs';
-// import { switchMap, map, withLatestFrom } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { Effect, ofType, Actions} from '@ngrx/effects';
+import { map, switchMap } from 'rxjs/operators';
 
-// import { EMessageActions } from '../actions/message.actions';
+import { MessageService } from 'src/app/message.service';
+import { Store } from '@ngrx/store';
+import { EMessageActions } from '../actions/message.actions';
 
-// @Injectable()
-// export class MessageEffects {
-//   @Effect()
-//   message$ = this.actions$.pipe(
-//     ofType(EMessageActions.LoadMessage),
-//     map(() =>
-//       this.MessageService.getArticles().pipe(
-//         map(articles => new ArticlesLoadedSuccess({ articles: articles })),
-//         catchError(() => of(new ArticlesLoadedError()))
-//       )
-//     )
-//   )
+@Injectable()
+export class MessageEffects {
+  @Effect()
+  message$ = this.actions$.pipe(
+    ofType(EMessageActions.LoadMessage),
+    switchMap(() =>
+      this.messageService.getMessage()
+      .pipe(
+        map(data => ({ type: "[Message] Message Loaded Success", payload: {message: data} })
+      ))
+    )
+  )
 
-//   constructor(
-//     private actions$: Actions,
-//     private articlesService: ArticlesService
-//   ) {}
-// }
+  constructor(
+    private actions$: Actions,
+    private messageService: MessageService,
+    private _store: Store,
+  ) {}
+}

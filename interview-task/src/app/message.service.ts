@@ -11,6 +11,10 @@ export class MessageService {
 
   constructor() { }
 
+  getMessage() {
+    return this.currentMessage;
+  }
+
   changeMessage(message: string) {
     this.messageSource.next(message);
   }
